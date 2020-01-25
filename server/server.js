@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const cors = require('cors');
 
-// const errorHandler = require('./app/helpers/error-handler.helper');
+const errorHandler = require('./app/helpers/error-handler.helper');
 const jwt = require('./app/helpers/jwt.helper');
 
 
@@ -20,7 +20,7 @@ const todoRoute = require('./app/routes/todo.route');
 app.use('/todos', todoRoute);
 
 // global error handler
-// app.use(errorHandler);
+app.use(errorHandler);
 
 app.listen(3001, () => {
 	console.log("Server is listening on port 3001");
